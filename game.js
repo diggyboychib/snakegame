@@ -6,7 +6,10 @@ let gameover=false;
 const gameBoard=document.getElementById("game-board")
 function main(currentTime){
     if(gameover){
-        return alert("You lost")
+        if(confirm("You've lost! Want to start a new game?")){
+            window.location="/";
+        }
+        return
     }
     window.requestAnimationFrame(main);
     let secondsSinceLastRender=(currentTime-lastRenderTime)/1000;
